@@ -5,17 +5,58 @@
   text-align: center;
 }
 
+.input-box {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #2f3e46;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.input-box:focus {
+  border-color: #84a98c;
+  outline: none;
+}
+
+.input-box::placeholder {
+  color: #888;
+}
+body {
+  background: #52796f;
+}
+font {
+  color: #84a98c;
+}
+.cajas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
+.button1:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-.logo.react:hover {
+button:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.pista {
+  font-style: italic;
+  color: #cad2c5;
 }
 
 @keyframes logo-spin {

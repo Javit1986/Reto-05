@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import usuarios from "./usuario.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [nombre, setNombre] = useState("");
+  let user = document.getElementById("user");
+  let pass = document.getElementById("pass");
+
+  const Valida = (e) => {
+    console.log(usuarios[0].usuario);
+    if (user.value == usuarios[0].usuario && pass.value == usuarios[0].pass) alert("BUEEEEENA");
+    else alert("usuario o contraseña no válidos");
+  };
+
+  const averquecambio = (e) => {
+    setNombre(": " + e.target.value);
+    if (e.target.value == "") setNombre();
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1 id="hache1" class="josefin-sans">
+        ¡Hola{nombre}!{" "}
+      </h1>
+      <div class="cajas">
+        <h2 class="josefin-sans">usuario: </h2>
+        <input id="user" class="input-box" type="text" onChange={averquecambio} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div class="cajas">
+        <h2 class="josefin-sans">contraseña:</h2>
+        <input id="pass" class="input-box" type="password"></input>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <br /> <br />
+      <button onClick={Valida} name="Entre">
+        Entrar
+      </button>
+      <br /> <br />
+      <p class="josefin-sans pista ">pista literal: "usuario: pepeloco" pass: "abracadabra"</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
